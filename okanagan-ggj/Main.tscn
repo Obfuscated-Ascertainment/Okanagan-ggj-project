@@ -1,37 +1,56 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxa4c4topdcjc"]
 
 [ext_resource type="Texture2D" uid="uid://bb75y5646ue20" path="res://icon.svg" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://co6o44ar1yl7h" path="res://texture_progress_bar.gd" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://c7oygg24fcb4y" path="res://main.gd" id="1_uu6xs"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_uu6xs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Neutral" type="Button" parent="."]
+[node name="Loud" type="Button" parent="."]
 modulate = Color(0.6871391, 0.6871391, 0.6871391, 1)
-offset_left = -270.0
+offset_left = -436.0
 offset_top = 189.0
-offset_right = -134.0
+offset_right = -300.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
 
 [node name="Happy" type="Button" parent="."]
 modulate = Color(1, 0, 1, 1)
-offset_left = -67.5
+offset_left = -252.0
 offset_top = 189.0
-offset_right = 68.5
+offset_right = -116.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
 
 [node name="Sad" type="Button" parent="."]
 modulate = Color(0, 0, 1, 1)
-offset_left = 135.0
+offset_left = -67.0
 offset_top = 189.0
-offset_right = 271.0
+offset_right = 69.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="Nonchalant" type="Button" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0.8784314, 1, 1)
+offset_left = 137.0
+offset_top = 189.0
+offset_right = 273.0
+offset_bottom = 325.0
+icon = ExtResource("1_glv2v")
+
+[node name="Alert" type="Button" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.89584833, 0.13460997, 0, 1)
+offset_left = 339.0
+offset_top = 189.0
+offset_right = 475.0
+offset_bottom = 325.0
+icon = ExtResource("1_glv2v")
+
+[node name="RelationsBar" type="TextureProgressBar" parent="."]
 offset_left = -265.0
 offset_top = 47.0
 offset_right = 276.0
@@ -39,8 +58,32 @@ offset_bottom = 175.0
 texture_under = ExtResource("1_glv2v")
 texture_progress = ExtResource("1_glv2v")
 tint_progress = Color(1, 0, 0, 1)
-script = ExtResource("2_uu6xs")
 
-[connection signal="pressed" from="Neutral" to="TextureProgressBar" method="_on_neutral_pressed"]
-[connection signal="pressed" from="Happy" to="TextureProgressBar" method="_on_happy_pressed"]
-[connection signal="pressed" from="Sad" to="TextureProgressBar" method="_on_sad_pressed"]
+[node name="SurveillanceBar" type="TextureProgressBar" parent="."]
+offset_left = -65.0
+offset_top = 47.0
+offset_right = 476.0
+offset_bottom = 175.0
+texture_under = ExtResource("1_glv2v")
+texture_progress = ExtResource("1_glv2v")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="ThreatBar" type="TextureProgressBar" parent="."]
+offset_left = 139.0
+offset_top = 47.0
+offset_right = 680.0
+offset_bottom = 175.0
+texture_under = ExtResource("1_glv2v")
+texture_progress = ExtResource("1_glv2v")
+tint_progress = Color(1, 0, 0, 1)
+
+[connection signal="pressed" from="Loud" to="." method="_on_loud_pressed"]
+[connection signal="pressed" from="Loud" to="RelationsBar" method="_on_neutral_pressed"]
+[connection signal="pressed" from="Happy" to="." method="_on_happy_pressed"]
+[connection signal="pressed" from="Happy" to="RelationsBar" method="_on_happy_pressed"]
+[connection signal="pressed" from="Sad" to="." method="_on_sad_pressed"]
+[connection signal="pressed" from="Sad" to="RelationsBar" method="_on_sad_pressed"]
+[connection signal="pressed" from="Nonchalant" to="." method="_on_nonchalant_pressed"]
+[connection signal="pressed" from="Nonchalant" to="RelationsBar" method="_on_sad_pressed"]
+[connection signal="pressed" from="Alert" to="." method="_on_alert_pressed"]
+[connection signal="pressed" from="Alert" to="RelationsBar" method="_on_sad_pressed"]

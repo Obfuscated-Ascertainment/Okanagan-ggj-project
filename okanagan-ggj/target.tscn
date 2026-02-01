@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://blgpbnr1jw3sv"]
+
+[node name="Target" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false

@@ -58,19 +58,19 @@ func _process(_delta: float) -> void:
 	elif Threat == -1:
 		$ThreatBar.value -= 0.2
 	
-	if $RelationsBar.value >= 75:
-		$SurveillanceBar.value += 0.2
-	if $RelationsBar.value <= 25:
-		$ThreatBar.value += 0.2
+	#if $RelationsBar.value >= 75:
+		#$SurveillanceBar.value += 0.2
+	#if $RelationsBar.value <= 25:
+		#$ThreatBar.value += 0.2
 	
 	if $ThreatBar.value >= 100:
 		lost()
 	
 	
 	#print(Relations)
-	print("Sureillance: " + str($SurveillanceBar.value))
-	print("Relations: " + str($RelationsBar.value))
-	print("Threat: " + str($ThreatBar.value))
+	#print("Sureillance: " + str($SurveillanceBar.value))
+	#print("Relations: " + str($RelationsBar.value))
+	#print("Threat: " + str($ThreatBar.value))
 		
 func kill():
 	if $SurveillanceBar.value >= 75: #surveillance  must be low enough for successful kill

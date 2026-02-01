@@ -37,17 +37,17 @@ func _on_alert_pressed() -> void:
 
 func _process(_delta: float) -> void:
 	if Relations == 1:
-		$RelationsBar.value += 1.0
+		$RelationsBar.value += 0.2
 	elif Relations == -1:
-		$RelationsBar.value -= 1.0
+		$RelationsBar.value -= 0.2
 	if Surveillance == 1:
-		$SurveillanceBar.value += 1.0
+		$SurveillanceBar.value += 0.2
 	elif Surveillance == -1:
-		$SurveillanceBar.value -= 1.0
+		$SurveillanceBar.value -= 0.2
 	if Threat == 1:
-		$ThreatBar.value += 1.0
+		$ThreatBar.value += 0.2
 	elif Threat == -1:
-		$ThreatBar.value -= 1.0
+		$ThreatBar.value -= 0.2
 	
 	if $RelationsBar.value >= 75:
 		$SurveillanceBar.value += 0.2

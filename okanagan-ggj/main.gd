@@ -2,6 +2,10 @@ extends Node2D
 var Relations = 0
 var Surveillance = 0
 var Threat = 0
+var SurveillanceIncreaseMult = 1.0
+var ThreatIncreaseMult = 1.0
+
+
 
 func _ready() -> void:
 	$RelationsBar.value = 0.0

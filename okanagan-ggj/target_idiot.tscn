@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqn6wggtpp4sv"]
+
+[ext_resource type="Script" uid="uid://dsmuy33rjoksw" path="res://target_idiot.gd" id="1_iugn6"]
+
+[node name="TargetIdiot" type="Node2D"]
+visible = false
+script = ExtResource("1_iugn6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

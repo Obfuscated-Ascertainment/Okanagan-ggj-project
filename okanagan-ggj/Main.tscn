@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxa4c4topdcjc"]
 
 [ext_resource type="Texture2D" uid="uid://bb75y5646ue20" path="res://icon.svg" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://c7oygg24fcb4y" path="res://main.gd" id="1_uu6xs"]
+[ext_resource type="Script" uid="uid://dsmuy33rjoksw" path="res://target_idiot.gd" id="1_r0du0"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_uu6xs")
+[node name="Main" type="Node2D"]
+script = ExtResource("1_r0du0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

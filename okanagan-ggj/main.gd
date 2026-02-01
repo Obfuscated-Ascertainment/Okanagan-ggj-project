@@ -4,8 +4,13 @@ var Surveillance = 0
 var Threat = 0
 var SurveillanceIncreaseMult = 1.0
 var ThreatIncreaseMult = 1.0
+var RelationsIncreaseMult = 1.0
+var RelationsDecreaseMult = 1.0
+var TargetPresent = false
+var KillCount := 0
 
-
+func spawntarget():
+	pass
 
 func _ready() -> void:
 	$RelationsBar.value = 0.0
@@ -41,15 +46,15 @@ func _on_alert_pressed() -> void:
 
 func _process(_delta: float) -> void:
 	if Relations == 1:
-		$RelationsBar.value += 0.2
+		$RelationsBar.value += 0.2 * RelationsIncreaseMult
 	elif Relations == -1:
-		$RelationsBar.value -= 0.2
+		$RelationsBar.value -= 0.2 * RelationsDecreaseMult
 	if Surveillance == 1:
-		$SurveillanceBar.value += 0.2
+		$SurveillanceBar.value += 0.2 * SurveillanceIncreaseMult
 	elif Surveillance == -1:
 		$SurveillanceBar.value -= 0.2
 	if Threat == 1:
-		$ThreatBar.value += 0.2
+		$ThreatBar.value += 0.2 * ThreatIncreaseMult
 	elif Threat == -1:
 		$ThreatBar.value -= 0.2
 	

@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://cxa4c4topdcjc"]
+[gd_scene load_steps=3 format=3 uid="uid://cxa4c4topdcjc"]
+
+[ext_resource type="Texture2D" uid="uid://bb75y5646ue20" path="res://icon.svg" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://co6o44ar1yl7h" path="res://texture_progress_bar.gd" id="2_uu6xs"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Neutral" type="Button" parent="."]
+modulate = Color(0.6871391, 0.6871391, 0.6871391, 1)
+offset_left = -270.0
+offset_top = 189.0
+offset_right = -134.0
+offset_bottom = 325.0
+icon = ExtResource("1_glv2v")
+
+[node name="Happy" type="Button" parent="."]
+modulate = Color(1, 0, 1, 1)
+offset_left = -67.5
+offset_top = 189.0
+offset_right = 68.5
+offset_bottom = 325.0
+icon = ExtResource("1_glv2v")
+
+[node name="Sad" type="Button" parent="."]
+modulate = Color(0, 0, 1, 1)
+offset_left = 135.0
+offset_top = 189.0
+offset_right = 271.0
+offset_bottom = 325.0
+icon = ExtResource("1_glv2v")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -265.0
+offset_top = 47.0
+offset_right = 276.0
+offset_bottom = 175.0
+texture_under = ExtResource("1_glv2v")
+texture_progress = ExtResource("1_glv2v")
+tint_progress = Color(1, 0, 0, 1)
+script = ExtResource("2_uu6xs")
+
+[connection signal="pressed" from="Neutral" to="TextureProgressBar" method="_on_neutral_pressed"]
+[connection signal="pressed" from="Happy" to="TextureProgressBar" method="_on_happy_pressed"]
+[connection signal="pressed" from="Sad" to="TextureProgressBar" method="_on_sad_pressed"]

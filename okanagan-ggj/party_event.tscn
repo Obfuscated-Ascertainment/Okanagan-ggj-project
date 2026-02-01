@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://buxmgnkqlgnfr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -43.0
+offset_top = -157.0
+offset_right = 46.0
+offset_bottom = -134.0
+text = "Party"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = -125.0
+offset_top = 64.0
+offset_right = 140.0
+offset_bottom = 95.0
+text = "Invite the ‘selected target’ to chat"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = -126.0
+offset_top = 107.0
+offset_right = 139.0
+offset_bottom = 138.0
+text = "Get drunk"
+
+[node name="Button3" type="Button" parent="."]
+modulate = Color(0.6430963, 0, 0.060238652, 1)
+offset_left = -125.0
+offset_top = 153.0
+offset_right = 140.0
+offset_bottom = 184.0
+text = "Poison drink"

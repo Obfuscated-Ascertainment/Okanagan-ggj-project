@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxa4c4topdcjc"]
+[gd_scene load_steps=4 format=3 uid="uid://cxa4c4topdcjc"]
 
 [ext_resource type="Texture2D" uid="uid://bb75y5646ue20" path="res://icon.svg" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://dsmuy33rjoksw" path="res://target_idiot.gd" id="1_r0du0"]
+[ext_resource type="Script" path="res://target_idiot.gd" id="1_r0du0"]
+[ext_resource type="Texture2D" uid="uid://flw45x2ipq8q" path="res://Masks.png" id="2_r0du0"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_r0du0")
@@ -9,12 +10,17 @@ script = ExtResource("1_r0du0")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Loud" type="Button" parent="."]
-modulate = Color(0.6871391, 0.6871391, 0.6871391, 1)
 offset_left = -436.0
 offset_top = 189.0
 offset_right = -300.0
 offset_bottom = 325.0
-icon = ExtResource("1_glv2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Loud"]
+position = Vector2(62, 67)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+hframes = 6
+frame = 3
 
 [node name="Happy" type="Button" parent="."]
 modulate = Color(1, 0, 1, 1)
@@ -24,6 +30,13 @@ offset_right = -116.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
 
+[node name="Sprite2D" type="Sprite2D" parent="Happy"]
+position = Vector2(62, 66)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+hframes = 6
+frame = 1
+
 [node name="Sad" type="Button" parent="."]
 modulate = Color(0, 0, 1, 1)
 offset_left = -67.0
@@ -31,6 +44,13 @@ offset_top = 189.0
 offset_right = 69.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sad"]
+position = Vector2(68, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+hframes = 6
+frame = 2
 
 [node name="Nonchalant" type="Button" parent="."]
 unique_name_in_owner = true
@@ -41,6 +61,12 @@ offset_right = 273.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
 
+[node name="Sprite2D" type="Sprite2D" parent="Nonchalant"]
+position = Vector2(68, 65)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+hframes = 6
+
 [node name="Alert" type="Button" parent="."]
 unique_name_in_owner = true
 modulate = Color(0.89584833, 0.13460997, 0, 1)
@@ -49,6 +75,20 @@ offset_top = 189.0
 offset_right = 475.0
 offset_bottom = 325.0
 icon = ExtResource("1_glv2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="Alert"]
+position = Vector2(67, 67)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+hframes = 6
+frame = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="Alert"]
+position = Vector2(65, 68)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_r0du0")
+hframes = 6
+frame = 5
 
 [node name="RelationsBar" type="TextureProgressBar" parent="."]
 offset_left = -265.0

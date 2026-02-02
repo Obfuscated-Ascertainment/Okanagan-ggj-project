@@ -3,7 +3,9 @@ var Relations = 0
 var Surveillance = 0
 var Threat = 0
 var SurveillanceIncreaseMult = 1.0
+var SurveillanceDecreaseMult = 1.0
 var ThreatIncreaseMult = 1.0
+var ThreatDecreaseMult = 1.0
 var RelationsIncreaseMult = 1.0
 var RelationsDecreaseMult = 1.0
 var TargetPresent = false
@@ -18,45 +20,45 @@ func _ready() -> void:
 	$ThreatBar.value = 0.0
 
 func _on_loud_pressed() -> void:
-	Relations = 1
+	Relations = 0.05
 	Surveillance = 0
-	Threat = 1
+	Threat = 0.05
 
 
 func _on_happy_pressed() -> void:
-	Relations = 1
-	Surveillance = -1
+	Relations = 0.05
+	Surveillance = -0.05
 	Threat = 0
 
 
 func _on_sad_pressed() -> void:
-	Relations = -1
+	Relations = -0.05
 	Surveillance = 0
-	Threat = -1
+	Threat = -0.05
 
 func _on_nonchalant_pressed() -> void:
-	Relations = -1
-	Surveillance = -1
+	Relations = -0.05
+	Surveillance = -0.05
 	Threat = 0
 
 func _on_alert_pressed() -> void:
 	Relations = 0
-	Surveillance = -1
-	Threat = 1
+	Surveillance = -0.05
+	Threat = 0.05
 
 func _process(_delta: float) -> void:
-	if Relations == 1:
-		$RelationsBar.value += 0.2 * RelationsIncreaseMult
-	elif Relations == -1:
-		$RelationsBar.value -= 0.2 * RelationsDecreaseMult
-	if Surveillance == 1:
-		$SurveillanceBar.value += 0.2 * SurveillanceIncreaseMult
-	elif Surveillance == -1:
-		$SurveillanceBar.value -= 0.2
-	if Threat == 1:
-		$ThreatBar.value += 0.2 * ThreatIncreaseMult
-	elif Threat == -1:
-		$ThreatBar.value -= 0.2
+	if Relations > 0:
+		$RelationsBar.value += Relations * RelationsIncreaseMult
+	if Relations < 0:
+		$RelationsBar.value += Relations * RelationsDecreaseMult
+	if Surveillance > 0:
+		$SurveillanceBar.value += Surveillance * SurveillanceIncreaseMult
+	if Surveillance < 0:
+		$SurveillanceBar.value += Surveillance * SurveillanceDecreaseMult
+	if Threat > 0:
+		$ThreatBar.value += Threat * ThreatIncreaseMult
+	if Threat < 0:
+		$ThreatBar.value -= Threat * ThreatDecreaseMult
 	
 	#if $RelationsBar.value >= 75:
 		#$SurveillanceBar.value += 0.2
